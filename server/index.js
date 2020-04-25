@@ -1,14 +1,10 @@
 const express = require('express');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
-var path = require('path')
-var fs = require('fs')
-var morgan = require('morgan')
+var path = require('path');
+var fs = require('fs');
+var morgan = require('morgan');
 
 const keys = require('./config/keys');
-const passport = require('./services/passportSetup');
-
 
 // ------------------------------------------------------------------------------------
 
@@ -31,14 +27,6 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 app.use(morgan('combined', {stream: accessLogStream}))
 
 // Express Session
-app.use(
-    session({
-        secret: keys.expressSession,
-        resave: false,
-        saveUninitialized: true,
-        store: new MongoStore({mongooseConnection: mongoose.connection})
-    })
-);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -47,10 +35,6 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
     });
 }
-
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 require('./routes/testRoutes')(app);
