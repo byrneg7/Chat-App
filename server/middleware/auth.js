@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/Users');
+const User = require('../models/User');
 const keys = require("../config/keys");
 
 const auth = async(req, res, next) => {
@@ -16,6 +16,6 @@ const auth = async(req, res, next) => {
   } catch (error) {
     res.status(401).send({ error: 'Not authorized to access this resource' })
   }
+};
 
-}
 module.exports = auth;
