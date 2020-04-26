@@ -1,5 +1,4 @@
 module.exports={
-  SENDER_EMAIL: process.env.SENDER_EMAIL,
-  PASS: process.env.PASS,
-  RECEIVER_EMAIL: process.env.RECEIVER_EMAIL
+  mongoURI: process.env.mongoURI,
+  JWT_KEY: process.env.JWT_KEY
 } 
