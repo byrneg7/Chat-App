@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
-import {Route} from 'react-router-dom';
 
 import {testGET, testPOST} from '../utils/api/testRoutes';
-import Welcome from './Welcome'
-import Example from './Example'
+import Router from '../routes/Router';
 
 const App = () => {
     useEffect(() => {
@@ -12,11 +10,10 @@ const App = () => {
     }, []);
 
     return (
-        <div>
-            <Route path="/" exact component={Welcome}/>
-            <Route path="/Example" exact component={Example}/>
-        </div>
+        <>
+            <Router/>
+        </>
     );
-}
+};
 
 export default App;
