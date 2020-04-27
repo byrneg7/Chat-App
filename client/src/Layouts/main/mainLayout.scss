@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper > * {
+  padding: 20px;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+:root {
+  --main-white-color: rgba(175, 86, 29, 0.2);
+  --main-purple-color: rgba(214, 107, 78, 0.30);
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  background: var(--main-purple-color) url("../../assets/images/banners/landingPage.jpg") no-repeat center / cover;
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+.page-main div {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-main {
+    padding-left: 90px;
+  }
+}
