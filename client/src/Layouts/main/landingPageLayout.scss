@@ -14,6 +14,7 @@
   justify-content: space-around;
   background: url("../../assets/images/banners/landingPage.jpg") no-repeat center / cover;
   box-shadow: 0 4px 2px -2px gray;
+  z-index: 1;
 }
 
 .landing-page-button-container {
@@ -38,6 +39,10 @@
   @media screen and (max-width: 360px) {
     width: 300px;
   }
+}
+
+.landing-page-header {
+  z-index: 100;
 }
 
 .landing-page-secondary {
