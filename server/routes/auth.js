@@ -24,7 +24,7 @@ module.exports = (app) => {
             const token = await user.generateAuthToken();
             res.send({user, token})
         } catch (error) {
-            console.log(error)
+            console.log(error);
             res.status(400).send(error)
         }
     });
@@ -51,7 +51,7 @@ module.exports = (app) => {
         } catch (error) {
             res.status(500).send(error)
         }
-    })
+    });
 
     app.get('/api/users/me', auth, async (req, res) => {
         // View logged in user profile
