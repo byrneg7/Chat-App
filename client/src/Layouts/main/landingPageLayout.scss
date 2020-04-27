@@ -1,0 +1,57 @@
+@import "../../assets/stylesheets/mixins";
+
+.landing-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.landing-page-main {
+  flex-grow: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: url("../../assets/images/banners/landingPage.jpg") no-repeat center / cover;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.landing-page-button-container {
+  align-self: center;
+}
+
+.landing-page-text-container {
+  top: 40px;
+  background: white;
+  border-top-right-radius: 50px 50px;
+  border-bottom-right-radius: 50px 50px;
+  text-align: center;
+  transition: width 0.5s;
+  width: 400px;
+
+  @include shadow-strong;
+
+  @media screen and (max-width: 450px) {
+    width: 350px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 300px;
+  }
+}
+
+.landing-page-secondary {
+  flex-grow: 3;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-page-main div {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-main {
+    padding-left: 90px;
+  }
+}
