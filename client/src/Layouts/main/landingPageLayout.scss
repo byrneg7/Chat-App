@@ -8,32 +8,32 @@
 
 .landing-page-main {
   flex-grow: 2;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background: url("../../assets/images/banners/landingPage.jpg") no-repeat center / cover;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: antiquewhite;
   box-shadow: 0 4px 2px -2px gray;
   z-index: 1;
-}
 
-.landing-page-button-container {
-  align-self: center;
+  transition: all 1s;
+  @media screen and (max-width: 576px) {
+    flex-grow: 1;
+  }
 }
 
 .landing-page-text-container {
+  display: flex;
+  flex-direction: column;
   top: 40px;
-  background: white;
-  border-top-right-radius: 50px 50px;
-  border-bottom-right-radius: 50px 50px;
-  text-align: center;
+  margin-left: 50px;
   transition: width 0.5s;
   width: 400px;
-
-  @include shadow-strong;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 450px) {
     width: 350px;
+    margin-left: 20px;
   }
 
   @media screen and (max-width: 360px) {

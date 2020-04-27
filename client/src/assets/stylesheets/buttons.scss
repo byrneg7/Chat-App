@@ -1,4 +1,6 @@
 @import "mixins";
+@import "text";
+@import "colours";
 
 .banner-button {
   width: 200px;
@@ -8,5 +10,30 @@
   box-shadow: 5px 10px 20px 3px #888888 !important;
   @media (max-width: 576px) {
     width: 150px;
+  }
+}
+
+.sign-up-button {
+  @include set-font-size(20px);
+
+  font-family: Roboto;
+  width: 200px;
+  border-radius: 30px;
+  background-color: $brand-blue;
+  border-color: $brand-blue-shade;
+
+  &:hover {
+    background-color: $brand-blue-highlight;
+    border-color: $brand-blue;
+  }
+
+  &:active {
+    background-color: $brand-blue-highlight !important;
+    border-color: $brand-blue !important;
+  }
+
+  &:focus {
+    background-color: $brand-blue-highlight !important;
+    border-color: $brand-blue !important;
   }
 }

@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import "colours";
 
-.font-huge{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 5px;
+@mixin set-font-size($font-size) {
+  font-size: $font-size;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-heading {
   font-size: 50px;
+  color: $brand-black;
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
 
@@ -15,5 +22,24 @@
   }
   @media screen and (max-width: 360px) {
     font-size: 35px;
+  }
+}
+
+.font-subheading {
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  color: $brand-black;
+  transition: all 0.5s;
+
+  @media screen and (max-width: 450px) {
+    font-size: 15px;
+  }
+}
+
+.brand-link {
+  color: $brand-black;
+
+  &:hover {
+    color: $brand-blue;
   }
 }

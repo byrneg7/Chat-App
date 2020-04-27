@@ -1,9 +1,10 @@
 import React from 'react';
+import LandingNav from "../../components/navigation/LandingNav";
 
 const AuthLayout = ({children}) => {
     return(
         <div>
-            auth layout
+            <LandingNav/>
             {children}
         </div>
     )

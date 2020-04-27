@@ -1,35 +1,31 @@
 import React from 'react';
-import {Button} from '@material-ui/core'
 import {withRouter} from "react-router-dom";
 
 import './landingPageLayout.scss'
-import MainNav from "../../components/navigation/MainNav";
+import LandingNav from "../../components/navigation/LandingNav";
+import communicationIcon from '../../assets/images/svgs/communication.svg'
 
 const LandingPageLayout = ({children, history}) => {
     return (
         <div className="landing-page-wrapper">
             <header className="landing-page-header">
-                <MainNav/>
+                <LandingNav/>
             </header>
 
             <main className="landing-page-main shadow-sm">
 
-                <div className='landing-page-text-container font-huge font-weight-bold'>
-                    Lorem Ipsum
+
+                <div className='landing-page-text-container text-center'>
+                    <span className='mb-3 border-bottom-shadow'>
+                        <div className='font-heading font-weight-bold'> talking shite? </div>
+                        <div className='font-20 font-subheading mb-2'> you've come to the right place </div>
+                    </span>
+                    <div className='sign-up-button mx-auto btn btn-primary' onClick={()=>history.push('/signup')}> Get Started</div>
+
                 </div>
 
-                <div className='landing-page-button-container'>
-                    <Button variant="contained"
-                            className='shadow-md mb-2 mb-sm-0 d-block d-sm-inline-block banner-button mr-1'
-                            onClick={() => history.push('/get-started')}>
-                        Get Started
-                    </Button>
+                <img src={communicationIcon} alt='people-on-phone-icon' className='d-none d-sm-inline-block'/>
 
-                    <Button variant="contained" className='shadow-md mr-2 d-block d-sm-inline-block banner-button ml-1'
-                            color="secondary" onClick={() => history.push('/signup')}>
-                        Sign Up
-                    </Button>
-                </div>
 
             </main>
 

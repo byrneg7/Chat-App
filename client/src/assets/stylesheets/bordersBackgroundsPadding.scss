@@ -6,6 +6,10 @@
 .shadow-line-break{
   margin-top: 0;
   margin-bottom: 0;
-  z-index: 100;
   box-shadow: 0 4px 2px -2px gray;
+}
+
+.border-bottom-shadow {
+  box-shadow: 0 4px 2px -4px gray;
+
 }
